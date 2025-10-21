@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__alphagenome__score_genetic_variant",
+      "mcp__alphagenome__predict_variant_effects",
+      "mcp__alphagenome__predict_dna_sequence",
+      "mcp__alphagenome__compare_intervals",
+      "mcp__alphagenome__predict_genome_interval",
+      "mcp__alphagenome__score_batch_variants",
+      "mcp__alphagenome__perform_ism_analysis",
+      "mcp__alphagenome__score_single_variant",
+      "mcp__alphagenome__get_output_metadata",
+      "Bash(python3:*)"
+    ],
+    "deny": [
+      "Read(AlphaGenome/benchmarking/**)",
+      "Read(AlphaGenome/**)"
+    ],
+    "ask": []
+  }
+}
