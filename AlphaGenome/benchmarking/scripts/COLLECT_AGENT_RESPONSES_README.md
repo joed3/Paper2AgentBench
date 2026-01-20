@@ -24,6 +24,9 @@ python collect_agent_responses.py ag_tutorial_benchmark_2025-09-25.csv --start-i
 
 # Enable verbose logging
 python collect_agent_responses.py ag_tutorial_benchmark_2025-09-25.csv --verbose
+
+# Run each question 3 independent times (useful for assessing consistency)
+python collect_agent_responses.py ag_tutorial_benchmark_2025-09-25.csv --num-runs 3
 ```
 
 ### Command Line Options
@@ -34,6 +37,8 @@ python collect_agent_responses.py ag_tutorial_benchmark_2025-09-25.csv --verbose
 - `--end-index`, `-e`: Index to end processing at (default: process all remaining questions)
 - `--max-retries`: Maximum number of retries for Claude CLI calls (default: 3)
 - `--timeout`: Timeout in seconds for Claude CLI calls (default: 300)
+- `--force-rerun`, `-f`: Force rerun of questions that already have agent responses (default: skip existing responses)
+- `--num-runs`, `-n`: Number of runs to perform for each question (default: 1)
 - `--verbose`, `-v`: Enable verbose logging
 
 ## Features
@@ -46,7 +51,7 @@ python collect_agent_responses.py ag_tutorial_benchmark_2025-09-25.csv --verbose
 
 ## Output
 
-The script creates an updated CSV file with the same structure as the input, but with the `agent_response` column populated with Claude's responses.
+The script creates an updated CSV file with the same structure as the input, but with the `agent_response` column populated with Claude's responses. If `--num-runs` is greater than 1, the output will contain multiple rows for each question, distinguished by the `run_index` column.
 
 ## Example Output
 

@@ -13,8 +13,7 @@
       "Bash(python3:*)"
     ],
     "deny": [
-      "Read(AlphaGenome/benchmarking/**)",
-      "Read(AlphaGenome/**)"
+      "Read(AlphaGenome/benchmarking/**)"
     ],
     "ask": []
   }
