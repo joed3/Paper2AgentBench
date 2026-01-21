@@ -400,7 +400,7 @@ def main():
             processed_count += 1
 
             # Save progress every 5 questions execution
-            if processed_count % 5 == 0:
+            if processed_count % 3 == 0:
                 temp_df = pd.DataFrame(final_rows)
                 temp_output = f"{output_path}.temp"
                 temp_df.to_csv(temp_output, index=False)
