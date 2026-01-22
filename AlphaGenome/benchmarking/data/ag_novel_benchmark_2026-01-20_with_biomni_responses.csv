@@ -931,7 +931,7 @@ Perfect! I have successfully used AlphaGenome to score the variant chr19:8134523
 }
 </solution>",,,3,159.044,,,,,,,
 https://github.com/google-genomics-alpha/alphagenome,colab/batch_variant_scoring.ipynb,novel,Score variant chr19:8134523:G>A using ATAC-seq predictions for lung (UBERON:0002048). What is the quantile_score for this cell type?,0.092026785,2026-01-20,"**Updated Plan:**
-1. [✓] Check the .env file for the ALPHAGENOME_API_KEY (found: AIzaSyBuPNu_JrwRqX-j0qGt6qOTzxmPTS15A70)
+1. [✓] Check the .env file for the ALPHAGENOME_API_KEY (found: XYZ)
 2. [✓] Research AlphaGenome API documentation and usage (installed package)
 3. [✓] Set up the environment and API key (client created)
 4. [✓] Make the API call to score variant chr19:8134523:G>A for ATAC-seq predictions in lung tissue (UBERON:0002048)
