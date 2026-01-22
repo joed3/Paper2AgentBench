@@ -33,6 +33,9 @@ python collect_claude_only_responses.py ag_tutorial_benchmark_2025-09-25.csv --s
 
 # Enable verbose logging
 python collect_claude_only_responses.py ag_tutorial_benchmark_2025-09-25.csv --verbose
+
+# Run each question 3 independent times
+python collect_claude_only_responses.py ag_tutorial_benchmark_2025-09-25.csv --num-runs 3
 ```
 
 ### Command Line Options
@@ -43,6 +46,8 @@ python collect_claude_only_responses.py ag_tutorial_benchmark_2025-09-25.csv --v
 - `--end-index`, `-e`: Index to end processing at (default: process all remaining questions)
 - `--max-retries`: Maximum number of retries for Claude CLI calls (default: 3)
 - `--timeout`: Timeout in seconds for Claude CLI calls (default: 300)
+- `--force-rerun`, `-f`: Force rerun of questions that already have agent responses
+- `--num-runs`, `-n`: Number of runs to perform for each question (default: 1)
 - `--verbose`, `-v`: Enable verbose logging
 
 ## Prompting Strategy
@@ -57,7 +62,7 @@ The script uses a code execution prompting approach that:
 
 ## Output
 
-The script creates an updated CSV file with the same structure as the input, but with the `agent_response` column populated with Claude's responses based on code execution using the AlphaGenome library.
+The script creates an updated CSV file with the same structure as the input, but with the `agent_response` column populated with Claude's responses based on code execution using the AlphaGenome library. If `--num-runs` is greater than 1, the output will contain multiple rows for each question, distinguished by the `run_index` column.
 
 ## Example Output
 

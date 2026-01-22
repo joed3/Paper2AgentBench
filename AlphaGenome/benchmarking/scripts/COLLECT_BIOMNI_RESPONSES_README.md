@@ -41,6 +41,9 @@ python collect_biomni_responses.py ag_tutorial_benchmark_2025-09-25.csv --start-
 
 # Enable verbose logging
 python collect_biomni_responses.py ag_tutorial_benchmark_2025-09-25.csv --verbose
+
+# Run each question 3 independent times
+python collect_biomni_responses.py ag_tutorial_benchmark_2025-09-25.csv --num-runs 3
 ```
 
 ### Command Line Options
@@ -53,6 +56,8 @@ python collect_biomni_responses.py ag_tutorial_benchmark_2025-09-25.csv --verbos
 - `--timeout`: Timeout in seconds for agent calls (default: 600)
 - `--data-path`: Path to Biomni data directory (default: ~/projects/Biomni/data)
 - `--llm`: LLM model to use (default: claude-sonnet-4-20250514)
+- `--force-rerun`, `-f`: Force rerun of questions that already have agent responses
+- `--num-runs`, `-n`: Number of runs to perform for each question (default: 1)
 - `--verbose`, `-v`: Enable verbose logging
 
 ### Advanced Usage
@@ -70,7 +75,7 @@ python collect_biomni_responses.py benchmark.csv --start-index 50
 
 ## Output Format
 
-The script produces CSV files with the following additional columns:
+The script produces CSV files with the following additional columns (if `--num-runs` > 1, a `run_index` column is also added):
 
 - `agent_response`: Final results text from Biomni agent
 - `full_agent_response_json`: Full response text from Biomni agent
